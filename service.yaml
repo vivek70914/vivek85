@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-webapp
+spec:
+  selector:
+    app: my-webapp
+  ports:
+    - protocol: TCP
+      port: 80          # Port exposed inside the cluster
+      targetPort: 80    # Port on the pod/container
+  type: ClusterIP      # Service type; default is ClusterIP
